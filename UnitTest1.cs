@@ -136,7 +136,7 @@ namespace testUser
         [TestMethod]
         public void testSaveBadCo()
         {
-            // On test si le save envoie bien un mail quand le User est mineur
+            // On test si le save ne s'envoie pas dans la chaine de co est mauvaise
 
             Exchange echangeMock = Mock.Of<Exchange>();
             Mock.Get(echangeMock).Setup(x => x.connexBD).Returns(false);
@@ -146,7 +146,7 @@ namespace testUser
         [TestMethod]
         public void testSaveDateFalse()
         {
-            // On test si le save envoie bien un mail quand le User est mineur
+            // On test si le save ne s'envoie pas quand la date est supérieur à la date de début
 
             Exchange echangeMock = Mock.Of<Exchange>();
             Mock.Get(echangeMock).Setup(x => x.dateStart).Returns(2023/01/01);
